@@ -1,4 +1,4 @@
-# Installation
+### Installation
 Just copy these 3 lines to your terminal and run :)
 ```bash
 sudo apt-get install git
