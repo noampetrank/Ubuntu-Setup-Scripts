@@ -1,6 +1,6 @@
 ./setup.general.sh
 ./setup.net.sh
-./setup.svn.sh
+./setup.git.sh
 ./setup.experiments.sh
 ./setup.openssh.sh
 ./setup.winstorage.sh
