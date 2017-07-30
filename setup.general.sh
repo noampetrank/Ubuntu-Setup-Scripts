@@ -26,3 +26,4 @@ sudo pip install tables
 sudo pip install pandas
 sudo pip install symfit
 sudo pip install pyusb==1.0.0b2 
+sudo pip install pygithub
