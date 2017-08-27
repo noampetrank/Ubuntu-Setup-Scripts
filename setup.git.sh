@@ -1,6 +1,6 @@
 echo "setup git"
 echo "checkout code"
-git clone https://github.com/Bugatone/Bugatone-Space.git bugatone-space
+git clone https://github.com/Bugatone/Bugatone-Space.git
 echo "Updating .profile file"
 echo "export BUGATONE_ROOT=/home/buga/bugatone-space" >> ~/.profile
 echo "export LD_LIBRARY_PATH=.:/home/buga/bugatone-space/lib/linux_x86:$LD_LIBRARY_PATH" >> ~/.profile

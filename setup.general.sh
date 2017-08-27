@@ -36,6 +36,5 @@ sudo pip install pygithub
 
 echo "cmake install"
 wget https://cmake.org/files/v3.9/cmake-3.9.1-Linux-x86_64.tar.gz
-mv cmake-3.9.1-Linux-x86_64.tar.gz /opt/cmake.tar.gz
-tar -xzf /opt/cmake.tar.gz
+tar -xzf cmake-3.9.1-Linux-x86_64.tar.gz -C /opt
 mv /opt/cmake-3.9.1-Linux-x86_64 /opt/cmake
