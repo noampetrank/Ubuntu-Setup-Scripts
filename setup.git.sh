@@ -3,6 +3,7 @@ git config --global push.default simple
 echo "checkout code"
 cd
 git clone https://github.com/Bugatone/Bugatone-Space.git
+sudo chown -R buga:buga Bugatone-Space
 ln -s Bugaton-Space git
 echo "Updating .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
