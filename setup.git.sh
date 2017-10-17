@@ -1,4 +1,5 @@
 echo "setup git"
+git config --global push.default simple
 echo "checkout code"
 cd
 git clone https://github.com/Bugatone/Bugatone-Space.git
