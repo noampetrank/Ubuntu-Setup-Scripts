@@ -17,7 +17,8 @@ Stuff to do after installing if needed:
 3.2. You should install it into /opt/  
 4. Install ndk  
 4.1. Must be ndk [version 11c](https://developer.android.com/ndk/downloads/older_releases.html)  
-4.2. Install it to /opt as well
+4.2. Install it to /opt as well  
+4.3. Make sure you can compile to android (`./make.sh android`)  
 5. Install android sdk via studio in all the required version (Build tool 24, api level 23, plus the latest version of adb)  
 5.1. Open android studio, under tools you will have SDK MAnager, use it to select all the api versions needed
 6. Make sure you can compile BugatoneAudioServerService in android studio  
