@@ -1,2 +1,2 @@
 echo "copy some shortcuts to desktop"
-cp ~buga/bugatone-space/python/scripts/shortcuts/* ~buga/Desktop/
+cp ~/Bugatone-Space/python/scripts/shortcuts/* ~/Desktop/
