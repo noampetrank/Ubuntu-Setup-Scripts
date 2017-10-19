@@ -23,3 +23,7 @@ Stuff to do after installing if needed:
 5.1. Open android studio, under tools you will have SDK MAnager, use it to select all the api versions needed
 6. Make sure you can compile BugatoneAudioServerService in android studio  
 7. run `sudo crontab -e` and change the line `* * * * * touch /mnt/buga_storage/` to `* * * * * touch /mnt/buga_storage/"YourComputerName"`. This fixes a bug in the script
+
+Stuff that's missing from script currently (todo):
+1. update .profile/.bashrc for sudo 
+2. create bugaconfig for buga and for sudo
