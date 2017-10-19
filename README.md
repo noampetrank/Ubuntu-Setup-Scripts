@@ -27,3 +27,4 @@ Stuff to do after installing if needed:
 Stuff that's missing from script currently (todo):
 1. update .profile/.bashrc for sudo 
 2. create bugaconfig for buga and for sudo
+3. Install vs code
