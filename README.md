@@ -20,7 +20,8 @@ Stuff to do after installing if needed:
 4.2. Install it to /opt as well  
 4.3. Make sure you can compile to android (`./make.sh android`)  
 5. Install android sdk via studio in all the required version (Build tool 24, api level 23, plus the latest version of adb)  
-5.1. Open android studio, under tools you will have SDK MAnager, use it to select all the api versions needed
+5.1. Create shortcut to android studio  
+5.2. Open android studio, under tools you will have SDK MAnager, use it to select all the api versions needed
 6. Make sure you can compile BugatoneAudioServerService in android studio  
 7. run `sudo crontab -e` and change the line `* * * * * touch /mnt/buga_storage/` to `* * * * * touch /mnt/buga_storage/"YourComputerName"`. This fixes a bug in the script
 
