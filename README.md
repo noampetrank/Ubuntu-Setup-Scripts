@@ -29,3 +29,4 @@ Stuff that's missing from script currently (todo):
 1. update .profile/.bashrc for sudo 
 2. create bugaconfig for buga and for sudo
 3. Install vs code
+4. sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
