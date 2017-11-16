@@ -10,6 +10,7 @@ Stuff to do after installing if needed:
 2.1. cd into the home directory (`/home/buga`)  
 2.2. Run `ll | grep root`
 2.3. There should be no files with root ownership, if there are run `sudo chown -R buga:buga <filename> <filename> <filename>`  
+3. Important: Log out and log in to the computer to apply new settings
 3. Make sure you can compile the code via ./make.sh  
 3.1. cd into git directory (`~/Bugatone-Space`)  
 3.2. run `./make.sh linux`, there is no need for sudo  
@@ -21,7 +22,7 @@ Stuff to do after installing if needed:
 5.1. Download version 2.3.3 of android studio from [the archives](https://developer.android.com/studio/archive.html)  
 5.2. Extract the downloaded zip to /opt/  
 5.3. Launch android studio by executing `/opt/android-studio/bin/studio.sh`  
-5.4. Let the setup process finish with default values
+5.4. Let the setup process finish with default values  
 5.4. After finishing, on the main window press Configure -> SDK Manager  
 5.5. In the first tab (SDK Platforms) select versions 23, 24, & 25  
 5.6. In the second tab (SDK Tools) select NDK and LLDB  
@@ -41,3 +42,4 @@ Stuff that's missing from script currently (todo):
 2. create bugaconfig for buga and for sudo
 3. Install vs code
 4. sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
+5. mkdir tmp_dir, mkdir experiments/parameters
