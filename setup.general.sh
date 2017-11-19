@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 echo "Linux setup - general, ALSA Support and Python"
-sudo apt-get update
-sudo apt-get upgrade -y
+
 
 echo "general installations"
 sudo apt-get install subversion vim libfftw3-dev -y
