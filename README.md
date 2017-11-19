@@ -42,4 +42,3 @@ Stuff that's missing from script currently (todo):
 2. create bugaconfig for buga and for sudo
 3. Install vs code
 4. sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
-5. mkdir tmp_dir, mkdir experiments/parameters
