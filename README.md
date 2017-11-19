@@ -35,10 +35,4 @@ Stuff to do after installing if needed:
 6.2. Unzip to /opt  
 6.3. Make sure you can compile to android (`./make.sh android`)  
 7. Make sure you can compile BugatoneAudioServerService in android studio  
-8. run `sudo crontab -e` and change the line `* * * * * touch /mnt/buga_storage/` to `* * * * * touch /mnt/buga_storage/"YourComputerName"`. This fixes a bug in the script
-
-Stuff that's missing from script currently (todo):
-1. update .profile/.bashrc for sudo 
-2. create bugaconfig for buga and for sudo
-3. Install vs code
-4. sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
+8. run `sudo crontab -e` and change the line `* * * * * touch /mnt/buga_storage/network_workaround/` to `* * * * * touch /mnt/buga_storage/network_workaround/"YourComputerName"`. This fixes a bug in the script

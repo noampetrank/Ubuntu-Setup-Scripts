@@ -26,3 +26,6 @@ sudo pip install subprocess32
 sudo pip install twisted
 sudo pip install requests
 sudo pip install bs4
+
+# Something that's required for the demo guis.
+apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
