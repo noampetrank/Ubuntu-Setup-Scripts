@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "setup git"
 git config --global push.default simple
 echo "checkout code"

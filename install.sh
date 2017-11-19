@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ./setup.general.sh
 ./setup.net.sh
 ./setup.git.sh

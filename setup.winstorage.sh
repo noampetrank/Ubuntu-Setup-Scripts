@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "Configuring Windows Share on Storage Server"
 sudo apt-get install cifs-utils -y
 sudo update-rc.d -f umountnfs.sh remove
@@ -16,4 +18,3 @@ echo "Edit /etc/fstab"
 echo '//10.0.0.100/BugaTone /mnt/buga_storage cifs nofail,credentials=/etc/BugaToneServerCredentials,uid=1000,gid=1000,rw,iocharset=utf8' | sudo tee -a /etc/fstab
 echo "mount everything"
 sudo mount -a
-
