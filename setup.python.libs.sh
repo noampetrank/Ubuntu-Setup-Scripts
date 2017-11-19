@@ -2,17 +2,6 @@
 echo "Linux setup - general, ALSA Support and Python"
 
 
-echo "general installations"
-sudo apt-get install subversion vim libfftw3-dev -y
-sudo apt-get install libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran -y
-
-echo "ALSA installations"
-sudo apt-get install libasound2-dev libncurses5-dev libncursesw5 libncursesw5-dev xmlto -y
-sudo apt-get install python-pip python-dev -y
-sudo apt-get install dvipng -y
-sudo apt-get install idle -y
-sudo apt-get install libhdf5-serial-dev -y
-
 echo "python installations"
 sudo pip install --upgrade pip
 sudo pip install numpy
@@ -37,8 +26,3 @@ sudo pip install subprocess32
 sudo pip install twisted
 sudo pip install requests
 sudo pip install bs4
-
-echo "cmake install"
-wget https://cmake.org/files/v3.9/cmake-3.9.1-Linux-x86_64.tar.gz
-tar -xzf cmake-3.9.1-Linux-x86_64.tar.gz -C /opt
-mv /opt/cmake-3.9.1-Linux-x86_64 /opt/cmake

@@ -4,10 +4,12 @@ sudo apt-get upgrade -y
 
 # openssh install and mono (setup.net.sh) installations are temporarily commented out till we figure out what they are necessary for
 
-./setup.general.sh
+./setup.code.dependencies.sh
+./setup.alsa.sh
+./setup.python.libs.sh
 # ./setup.net.sh
 ./setup.git.sh
-./setup.buga_directories.sh
+./setup.buga.directories.sh
 # ./setup.openssh.sh
 ./setup.winstorage.sh
 ./setup.desktop.shortcuts.sh
