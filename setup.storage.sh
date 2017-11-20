@@ -52,7 +52,7 @@ then
     sudo chmod 640 $CRED_FILE_QNAP_STORAGE
     echo "QNAP buga storage credentials file created successfully at $CRED_FILE_QNAP_STORAGE"
 else
-    echo "$CRED_FILE_QNAP_STORAGE alread exists."
+    echo "$CRED_FILE_QNAP_STORAGE already exists."
 fi
 
 echo "Create local folder for mounts"
