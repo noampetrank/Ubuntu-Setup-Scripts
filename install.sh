@@ -11,6 +11,6 @@ sudo apt-get upgrade -y
 ./setup.git.sh
 ./setup.buga.directories.sh
 # ./setup.openssh.sh
-./setup.winstorage.sh
+./setup.storage.sh
 ./setup.desktop.shortcuts.sh
 ./setup.network.workaround.sh
