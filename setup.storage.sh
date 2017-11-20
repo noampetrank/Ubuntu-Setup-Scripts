@@ -60,11 +60,27 @@ echo "Create local folder for mounts"
 [ ! -d $MOUNT_STAGING_STORAGE    ] && sudo mkdir $MOUNT_STAGING_STORAGE
 [ ! -d $MOUNT_PUBLIC_STORAGE     ] && sudo mkdir $MOUNT_PUBLIC_STORAGE
 
-sudo chown $USER_HOST:$USER_HOST $MOUNT_PRODUCTION_STORAGE
-echo "Edit $FSTAB"
-echo "//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_PRODUCTION_STORAGE cifs nofail,credentials=$CRED_FILE_BUGATONE_WIN_SERVER,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
-echo "//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_STAGING_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
-echo "//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
+echo "Setting mount directories ownership"
+[ `stat -c "%U" $MOUNT_PRODUCTION_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_PRODUCTION_STORAGE
+[ `stat -c "%U" $MOUNT_STAGING_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_STAGING_STORAGE
+[ `stat -c "%U" $MOUNT_PUBLIC_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_PUBLIC_STORAGE
 
-echo "Mount all new configurations"
+CONFIG_WIN_MOUNT="//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_PRODUCTION_STORAGE cifs nofail,credentials=$CRED_FILE_BUGATONE_WIN_SERVER,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
+CONFIG_QNAP_BUGA="//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_STAGING_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
+CONFIG_QNAP_PUB="//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
+
+if grep -Fxq "$CONFIG_WIN_MOUNT" $FSTAB
+then
+    echo $CONFIG_WIN_MOUNT >> $FSTAB
+fi
+if grep -Fxq "$CONFIG_QNAP_BUGA" $FSTAB
+then
+    echo $CONFIG_QNAP_BUGA >> $FSTAB
+fi
+if grep -Fxq "$CONFIG_QNAP_PUB" $FSTAB
+then
+    echo $CONFIG_QNAP_PUB >> $FSTAB
+fi
+
+echo "Remounting..."
 sudo mount -a
