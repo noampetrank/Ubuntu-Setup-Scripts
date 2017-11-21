@@ -24,63 +24,47 @@ PASS_QNAP_STORAGE="buga"
 
 USER_HOST="buga"
 
+MOUNT_TYPE="cifs"
+MOUNT_PARAMS="nofail,uid=1000,gid=1000,rw,iocharset=utf8"
+
 echo "Configuring remote storage mounts"
 
 echo "Installing required packages"
-sudo apt-get install cifs-utils -y
-sudo update-rc.d -f umountnfs.sh remove
-sudo update-rc.d umountnfs.sh stop 15 0 6 
+sudo apt-get install cifs-utils -y        >> /dev/null
+sudo update-rc.d -f umountnfs.sh remove   >> /dev/null
+sudo update-rc.d umountnfs.sh stop 15 0 6 >> /dev/null
 
-if [ ! -f $CRED_FILE_BUGATONE_WIN_SERVER ]
-then
-    echo "Generating credentials file for Windows Storage Server"
-    echo "username=$USER_WIN_STORAGE" | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER
-    echo "password=$PASS_WIN_STORAGE" | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER
-    echo "domain=$DOMN_WIN_STORAGE"   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER
-    echo 'vers=3.0'                   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER
-    sudo chmod 640 $CRED_FILE_BUGATONE_WIN_SERVER
-    echo "Windows storage credentials file created successfully at $CRED_FILE_BUGATONE_WIN_SERVER"
-else
-    echo "$CRED_FILE_BUGATONE_WIN_SERVER already exists." 
-fi
+if [ ! -f $CRED_FILE_BUGATONE_WIN_SERVER ]; then sudo touch "$CRED_FILE_BUGATONE_WIN_SERVER"; fi
+if ! sudo grep -q "username" $CRED_FILE_BUGATONE_WIN_SERVER; then echo "username=$USER_WIN_STORAGE" | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
+if ! sudo grep -q "password" $CRED_FILE_BUGATONE_WIN_SERVER; then echo "password=$PASS_WIN_STORAGE" | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
+if ! sudo grep -q "domain" $CRED_FILE_BUGATONE_WIN_SERVER;   then echo "domain=$DOMN_WIN_STORAGE"   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
+if ! sudo grep -q "vers" $CRED_FILE_BUGATONE_WIN_SERVER;     then echo 'vers=3.0'                   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
+sudo chmod 640 $CRED_FILE_BUGATONE_WIN_SERVER
+echo "Windows storage credentials file created successfully at $CRED_FILE_BUGATONE_WIN_SERVER"
 
-if [ ! -f $CRED_FILE_QNAP_STORAGE ]
-then
-    echo "Generating credentials file for the QNAP Buga Storage"
-    echo "username=$USER_QNAP_STORAGE" | sudo tee -a $CRED_FILE_QNAP_STORAGE
-    echo "password=$PASS_QNAP_STORAGE" | sudo tee -a $CRED_FILE_QNAP_STORAGE
-    sudo chmod 640 $CRED_FILE_QNAP_STORAGE
-    echo "QNAP buga storage credentials file created successfully at $CRED_FILE_QNAP_STORAGE"
-else
-    echo "$CRED_FILE_QNAP_STORAGE already exists."
-fi
+if [ ! -f $CRED_FILE_QNAP_STORAGE ]; then sudo touch "$CRED_FILE_QNAP_STORAGE"; fi
+if ! sudo grep -q "username" $CRED_FILE_QNAP_STORAGE; then echo "username=$USER_QNAP_STORAGE" | sudo tee -a $CRED_FILE_QNAP_STORAGE > /dev/null; fi
+if ! sudo grep -q "password" $CRED_FILE_QNAP_STORAGE; then echo "password=$PASS_QNAP_STORAGE" | sudo tee -a $CRED_FILE_QNAP_STORAGE > /dev/null; fi
+sudo chmod 640 $CRED_FILE_QNAP_STORAGE
+echo "Configured QNAP credentials file at: $CRED_FILE_QNAP_STORAGE"
 
 echo "Create local folder for mounts"
-[ ! -d $MOUNT_PRODUCTION_STORAGE ] && sudo mkdir $MOUNT_PRODUCTION_STORAGE
-[ ! -d $MOUNT_STAGING_STORAGE    ] && sudo mkdir $MOUNT_STAGING_STORAGE
-[ ! -d $MOUNT_PUBLIC_STORAGE     ] && sudo mkdir $MOUNT_PUBLIC_STORAGE
+if [ ! -d $MOUNT_PRODUCTION_STORAGE ]; then sudo mkdir $MOUNT_PRODUCTION_STORAGE; fi
+if [ ! -d $MOUNT_STAGING_STORAGE ];    then sudo mkdir $MOUNT_STAGING_STORAGE;    fi
+if [ ! -d $MOUNT_PUBLIC_STORAGE ];     then sudo mkdir $MOUNT_PUBLIC_STORAGE;     fi
 
 echo "Setting mount directories ownership"
-[ `stat -c "%U" $MOUNT_PRODUCTION_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_PRODUCTION_STORAGE
-[ `stat -c "%U" $MOUNT_STAGING_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_STAGING_STORAGE
-[ `stat -c "%U" $MOUNT_PUBLIC_STORAGE` == "$USER_HOST" ] && sudo chown $USER_HOST:$USER_HOST $MOUNT_PUBLIC_STORAGE
+if [ `stat -c "%U" $MOUNT_PRODUCTION_STORAGE` == "$USER_HOST" ]; then sudo chown $USER_HOST:$USER_HOST $MOUNT_PRODUCTION_STORAGE; fi
+if [ `stat -c "%U" $MOUNT_STAGING_STORAGE`    == "$USER_HOST" ]; then sudo chown $USER_HOST:$USER_HOST $MOUNT_STAGING_STORAGE;    fi
+if [ `stat -c "%U" $MOUNT_PUBLIC_STORAGE`     == "$USER_HOST" ]; then sudo chown $USER_HOST:$USER_HOST $MOUNT_PUBLIC_STORAGE;     fi
 
-CONFIG_WIN_MOUNT="//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_PRODUCTION_STORAGE cifs nofail,credentials=$CRED_FILE_BUGATONE_WIN_SERVER,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
-CONFIG_QNAP_BUGA="//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_STAGING_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
-CONFIG_QNAP_PUB="//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE cifs nofail,credentials=$CRED_FILE_QNAP_STORAGE,uid=1000,gid=1000,rw,iocharset=utf8" | sudo tee -a $FSTAB
+CONFIG_WIN_MOUNT="//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_PRODUCTION_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_BUGATONE_WIN_SERVER"
+CONFIG_QNAP_BUGA="//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_STAGING_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_QNAP_STORAGE"
+CONFIG_QNAP_PUB="//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_QNAP_STORAGE"
 
-if grep -Fxq "$CONFIG_WIN_MOUNT" $FSTAB
-then
-    echo $CONFIG_WIN_MOUNT >> $FSTAB
-fi
-if grep -Fxq "$CONFIG_QNAP_BUGA" $FSTAB
-then
-    echo $CONFIG_QNAP_BUGA >> $FSTAB
-fi
-if grep -Fxq "$CONFIG_QNAP_PUB" $FSTAB
-then
-    echo $CONFIG_QNAP_PUB >> $FSTAB
-fi
+if ! `sudo grep -q "$MOUNT_PRODUCTION_STORAGE" $FSTAB`; then echo $CONFIG_WIN_MOUNT | sudo tee -a $FSTAB > /dev/null; fi
+if ! `sudo grep -q "$MOUNT_STAGING_STORAGE"    $FSTAB`; then echo $CONFIG_QNAP_BUGA | sudo tee -a $FSTAB > /dev/null; fi 
+if ! `sudo grep -q "$MOUNT_PUBLIC_STORAGE"     $FSTAB`; then echo $CONFIG_QNAP_PUB  | sudo tee -a $FSTAB > /dev/null; fi 
 
 echo "Remounting..."
 sudo mount -a
