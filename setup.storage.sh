@@ -40,7 +40,7 @@ if ! sudo grep -q "password" $CRED_FILE_BUGATONE_WIN_SERVER; then echo "password
 if ! sudo grep -q "domain" $CRED_FILE_BUGATONE_WIN_SERVER;   then echo "domain=$DOMN_WIN_STORAGE"   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
 if ! sudo grep -q "vers" $CRED_FILE_BUGATONE_WIN_SERVER;     then echo 'vers=3.0'                   | sudo tee -a $CRED_FILE_BUGATONE_WIN_SERVER > /dev/null; fi
 sudo chmod 640 $CRED_FILE_BUGATONE_WIN_SERVER
-echo "Windows storage credentials file created successfully at $CRED_FILE_BUGATONE_WIN_SERVER"
+echo "Configured Windows server credentials file at: $CRED_FILE_BUGATONE_WIN_SERVER"
 
 if [ ! -f $CRED_FILE_QNAP_STORAGE ]; then sudo touch "$CRED_FILE_QNAP_STORAGE"; fi
 if ! sudo grep -q "username" $CRED_FILE_QNAP_STORAGE; then echo "username=$USER_QNAP_STORAGE" | sudo tee -a $CRED_FILE_QNAP_STORAGE > /dev/null; fi
