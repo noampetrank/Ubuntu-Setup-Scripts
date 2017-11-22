@@ -58,12 +58,15 @@ if [ `stat -c "%U" $MOUNT_PRODUCTION_STORAGE` == "$USER_HOST" ]; then sudo chown
 if [ `stat -c "%U" $MOUNT_STAGING_STORAGE`    == "$USER_HOST" ]; then sudo chown $USER_HOST:$USER_HOST $MOUNT_STAGING_STORAGE;    fi
 if [ `stat -c "%U" $MOUNT_PUBLIC_STORAGE`     == "$USER_HOST" ]; then sudo chown $USER_HOST:$USER_HOST $MOUNT_PUBLIC_STORAGE;     fi
 
-CONFIG_WIN_MOUNT="//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_PRODUCTION_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_BUGATONE_WIN_SERVER"
-CONFIG_QNAP_BUGA="//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_STAGING_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_QNAP_STORAGE"
+sudo sed -i "/mnt\/buga_storage/d" $FSTAB
+sudo sed -i "/mnt\/bugastorage/d" $FSTAB
+
+CONFIG_WIN_MOUNT="//$IP_WIN_SERVER/$SHARE_WIN_SERVER $MOUNT_STAGING_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_BUGATONE_WIN_SERVER"
+CONFIG_QNAP_BUGA="//$IP_QNAP_STORAGE/$SHARE_QNAP_BUGA $MOUNT_PRODUCTION_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_QNAP_STORAGE"
 CONFIG_QNAP_PUB="//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE $MOUNT_TYPE $MOUNT_PARAMS,credentials=$CRED_FILE_QNAP_STORAGE"
 
-if ! `sudo grep -q "$MOUNT_PRODUCTION_STORAGE" $FSTAB`; then echo $CONFIG_WIN_MOUNT | sudo tee -a $FSTAB > /dev/null; fi
-if ! `sudo grep -q "$MOUNT_STAGING_STORAGE"    $FSTAB`; then echo $CONFIG_QNAP_BUGA | sudo tee -a $FSTAB > /dev/null; fi 
+if ! `sudo grep -q "$MOUNT_STAGING_STORAGE" $FSTAB`; then echo $CONFIG_WIN_MOUNT | sudo tee -a $FSTAB > /dev/null; fi
+if ! `sudo grep -q "$MOUNT_PRODUCTION_STORAGE"    $FSTAB`; then echo $CONFIG_QNAP_BUGA | sudo tee -a $FSTAB > /dev/null; fi 
 if ! `sudo grep -q "$MOUNT_PUBLIC_STORAGE"     $FSTAB`; then echo $CONFIG_QNAP_PUB  | sudo tee -a $FSTAB > /dev/null; fi 
 
 echo "Remounting..."
