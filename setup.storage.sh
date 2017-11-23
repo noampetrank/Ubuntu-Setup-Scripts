@@ -13,7 +13,7 @@ SHARE_QNAP_PUB="Public"
 FSTAB="/etc/fstab"
 
 MOUNT_PRODUCTION_STORAGE="/mnt/buga_storage"
-MOUNT_STAGING_STORAGE="/mnt/bugastorage"
+MOUNT_STAGING_STORAGE="/mnt/buga_old"
 MOUNT_PUBLIC_STORAGE="/mnt/buga_pub"
 
 USER_WIN_STORAGE="Buga"
@@ -68,6 +68,9 @@ CONFIG_QNAP_PUB="//$IP_QNAP_STORAGE/$SHARE_QNAP_PUB $MOUNT_PUBLIC_STORAGE $MOUNT
 if ! `sudo grep -q "$MOUNT_STAGING_STORAGE" $FSTAB`; then echo $CONFIG_WIN_MOUNT | sudo tee -a $FSTAB > /dev/null; fi
 if ! `sudo grep -q "$MOUNT_PRODUCTION_STORAGE"    $FSTAB`; then echo $CONFIG_QNAP_BUGA | sudo tee -a $FSTAB > /dev/null; fi 
 if ! `sudo grep -q "$MOUNT_PUBLIC_STORAGE"     $FSTAB`; then echo $CONFIG_QNAP_PUB  | sudo tee -a $FSTAB > /dev/null; fi 
+
+sudo umount "/mnt/bugastorage"
+sudo rm -rf "/mnt/bugastorage"
 
 echo "Remounting..."
 sudo mount -a
