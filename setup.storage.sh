@@ -25,7 +25,7 @@ PASS_QNAP_STORAGE="buga"
 USER_HOST="buga"
 
 MOUNT_TYPE="cifs"
-MOUNT_PARAMS="nofail,uid=1000,gid=1000,rw,iocharset=utf8"
+MOUNT_PARAMS="nofail,uid=1000,gid=100,dir_mode=0777,file_mode=0777,rw,iocharset=utf8"
 
 echo "Configuring remote storage mounts"
 
