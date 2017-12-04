@@ -25,11 +25,12 @@ Stuff to do after installing if needed:
 5.4. Let the setup process finish with default values  
 5.4. After finishing, on the main window press Configure -> SDK Manager  
 5.5. In the first tab (SDK Platforms) select versions 23, 24, & 25  
-5.6. In the second tab (SDK Tools) select NDK and LLDB  
+5.6. In the second tab (SDK Tools) select LLDB  
 5.6.1. In that same page press the checkbox at the bottom that says "Show Package Details"  
 5.6.2. Now you can install older build tools versions. Install 24.0.1 and 25.0.3  
 5.7. Press OK, accept, and wait for the long download to finish  
 5.8. Open any project, and under the tools menu, press the button to create a desktop shortcut for android studio  
+5.9. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)
 6. Install ndk [version 11c](https://developer.android.com/ndk/downloads/older_releases.html)  
 6.1. Download the zip from the link  
 6.2. Unzip to /opt  
