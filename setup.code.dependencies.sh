@@ -12,4 +12,4 @@ wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
 dpkg -i vscode.deb
 apt-get install -f
 
-sudo apt-get install meld gitk
+sudo apt-get install meld gitk -y
