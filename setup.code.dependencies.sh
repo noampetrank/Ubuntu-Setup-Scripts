@@ -1,6 +1,6 @@
 
 echo "Installing dependencies"
-sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran -y
+sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 python-gtk2-devel -y
 
 echo "Installing cmake"
 wget https://cmake.org/files/v3.9/cmake-3.9.1-Linux-x86_64.tar.gz
