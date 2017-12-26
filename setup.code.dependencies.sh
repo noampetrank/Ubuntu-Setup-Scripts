@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 echo "Installing dependencies"
 sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 python-gtk2-devel -y
