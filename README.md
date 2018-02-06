@@ -36,4 +36,9 @@ Stuff to do after installing if needed:
 6.2. Unzip to /opt  
 6.3. Make sure you can compile to android (`./make.sh android`)  
 7. Make sure you can compile BugatoneAudioServerService in android studio  
-8. run `sudo crontab -e` and change the line `* * * * * touch /mnt/buga_storage/network_workaround/` to `* * * * * touch /mnt/buga_storage/network_workaround/"YourComputerName"`. This fixes a bug in the script
+
+
+TODO:
+1. Remove the network crontab
+2. Fix the numbering
+3. Move installing the ndk to be before installing android studio
