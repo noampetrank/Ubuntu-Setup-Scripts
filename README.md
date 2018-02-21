@@ -31,14 +31,4 @@ Stuff to do after installing if needed:
 5.7. Press OK, accept, and wait for the long download to finish  
 5.8. Open any project, and under the tools menu, press the button to create a desktop shortcut for android studio  
 5.9. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)
-6. Install ndk [version 11c](https://developer.android.com/ndk/downloads/older_releases.html)  
-6.1. Download the zip from the link  
-6.2. Unzip to /opt  
-6.3. Make sure you can compile to android (`./make.sh android`)  
-7. Make sure you can compile BugatoneAudioServerService in android studio  
-
-
-TODO:
-1. Remove the network crontab
-2. Fix the numbering
-3. Move installing the ndk to be before installing android studio
+6. Make sure you can compile BugatoneAudioServerService in android studio  
