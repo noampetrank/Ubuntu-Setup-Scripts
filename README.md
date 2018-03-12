@@ -7,7 +7,25 @@ cd Ubuntu-Setup-Scripts
 sudo ./install.sh
 ```
 
-Stuff to do after installing if needed:  
+#### How to install ubuntu 16.04 (can vary between computers):
+1. insert DoK with Ubuntu 16.04 installation on it
+2. Turn on computer, and press F2/F12/search google (depends on computer)
+3. choose what looks like your installation DoK.
+   if you get to choose between bios and UEFI, choose UEFI.
+4. press Enter
+5. installation window 'welcome':
+5.1 when asked for password - choose the hard one  
+5.2 when asked what to install, check both boxes.  
+5.3 connect to wifi  
+5.4 when asked details about computer:  
+your name - doesn't matter  
+computer name - BugaLab__ (number)  
+user name - buga  
+password - hard one  
+5.5 when asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)  
+
+
+#### Stuff to do after installing if needed:  
 1. **Read the instructions carefully**  
 2. Make sure there are no leftover files as root  
 2.1. cd into the home directory (`/home/buga`)  
