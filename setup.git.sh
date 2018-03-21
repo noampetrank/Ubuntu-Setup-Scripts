@@ -21,7 +21,7 @@ echo "export LD_LIBRARY_PATH=.:/home/buga/Bugatone-Space/lib/linux_x86:\$LD_LIBR
 echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /root/.bashrc
 echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
 echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
-echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/bashrc
+echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
 source /root/.bashrc
 
 echo "make project"
