@@ -14,3 +14,5 @@ sudo apt-get upgrade -y
 ./setup.storage.sh
 ./setup.desktop.shortcuts.sh
 ./setup.network.workaround.sh
+
+sudo chown -R buga:buga /home/buga 
