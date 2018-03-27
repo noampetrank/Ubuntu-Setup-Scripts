@@ -6,8 +6,10 @@ cd
 git clone https://github.com/Bugatone/Bugatone-Space.git
 sudo chown -R buga:buga Bugatone-Space
 ln -s Bugatone-Space git
+pip install -e Bugatone-Space
 
 git clone https://github.com/Bugatone/mobileproduct.git
+pip install -e mobileproduct
 
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
