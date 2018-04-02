@@ -3,6 +3,19 @@
 echo "Installing dependencies"
 sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 -y
 
+echo "Installing clang"
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-5.0 main"
+sudo apt-get update
+sudo apt-get install -y clang-5.0
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 100
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-5.0 1000
+sudo update-alternatives --install /usr/bin/clang++ clang /usr/bin/clang-3.8 100
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.8 100
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-5.0 1000
+sudo update-alternatives --config clang --skip-auto
+sudo update-alternatives --config clang++ --skip-auto
+
 echo "Installing cmake"
 wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz
 tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
