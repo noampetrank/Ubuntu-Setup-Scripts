@@ -7,6 +7,7 @@ sudo apt-get upgrade -y
 ./setup.code.dependencies.sh
 ./setup.alsa.sh
 ./setup.python.libs.sh
+./setup.tools.sh
 # ./setup.net.sh
 ./setup.git.sh
 ./setup.buga.directories.sh

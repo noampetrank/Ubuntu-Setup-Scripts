@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "Linux setup - general, ALSA Support and Python"
+echo "Python libs"
 
 
 echo "python installations"

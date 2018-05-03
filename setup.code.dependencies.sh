@@ -21,18 +21,6 @@ wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x8
 tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
 sudo mv cmake-3.10.2-Linux-x86_64 /opt/cmake
 
-echo "Installing vs code"
-wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
-dpkg -i vscode.deb
-apt-get install -f
-
-echo "Install chrome"
-sudo apt-get install libxss1 libappindicator1 libindicator7
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# This is doubled on purpose.
-sudo dpkg -i google-chrome*.deb
-sudo apt-get install -f
-sudo dpkg -i google-chrome*.deb
 
 echo "* Downloading ndk 16"
 wget --quiet --show-progress https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip
