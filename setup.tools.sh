@@ -14,3 +14,19 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 sudo apt-get install -f
 sudo dpkg -i google-chrome*.deb
+
+echo "Install emacs-mozc"
+sudo apt update
+sudo apt install emacs-mozc
+
+echo "Install gnome-tweak-tool"
+sudo apt install gnome-tweak-tool
+
+echo "Install id3v2"
+sudo apt install id3v2
+
+echo "Install screen"
+sudo apt install screen
+
+echo "Install tree"
+sudo apt install tree
