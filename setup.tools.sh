@@ -16,23 +16,17 @@ sudo apt-get install -f
 sudo dpkg -i google-chrome*.deb
 
 echo "Install emacs-mozc"
-sudo apt-get update
-sudo apt-get install emacs-mozc
+sudo apt update
+sudo apt install emacs-mozc
 
 echo "Install gnome-tweak-tool"
 sudo apt install gnome-tweak-tool
 
 echo "Install id3v2"
-sudo apt-get install id3v2
-
-echo "Install keepassx"
-sudo apt-get install keepassx
-
-echo "Install mpv"
-sudo apt install mpv
+sudo apt install id3v2
 
 echo "Install screen"
-sudo apt-get install screen
+sudo apt install screen
 
 echo "Install tree"
-sudo apt-get install tree
+sudo apt install tree
