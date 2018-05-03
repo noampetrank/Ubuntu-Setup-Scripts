@@ -13,7 +13,7 @@ sudo apt-get upgrade -y
 ./setup.buga.directories.sh
 ./setup.openssh.sh
 ./setup.storage.sh
-./setup.desktop.shortcuts.sh
+./setup.shortcuts.and.songs.sh
 ./setup.network.workaround.sh
 
 sudo chown -R buga:buga /home/buga 
