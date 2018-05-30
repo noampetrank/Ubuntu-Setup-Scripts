@@ -23,7 +23,7 @@ sudo apt-get install git
 git clone https://github.com/Bugatone/Ubuntu-Setup-Scripts.git
 cd Ubuntu-Setup-Scripts
 sudo ./install.sh
-
+```
 #### Stuff to do after installing if needed:  
 1. **Read the instructions carefully**  
 2. Make sure there are no leftover files as root  
@@ -36,7 +36,7 @@ sudo ./install.sh
 3.2. run `./make.sh linux`, there is no need for sudo  
 4. Using jetbrains toolbox install CLion and PyCharm  
 4.1. Download the toolbox from [here](https://www.jetbrains.com/toolbox/app/)  
-4.2. Extract the downloaded file and run the executable  
+4.2. **Extract** the downloaded file and run the executable  
 4.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).
 5. Install Android Studio  
 5.1. Download version 2.3.3 of android studio from [the archives](https://developer.android.com/studio/archive.html)  
