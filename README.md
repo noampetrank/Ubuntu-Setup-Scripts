@@ -1,11 +1,3 @@
-### Installation
-to install execute:
-```bash
-sudo apt-get install git
-git clone https://github.com/Bugatone/Ubuntu-Setup-Scripts.git
-cd Ubuntu-Setup-Scripts
-sudo ./install.sh
-```
 
 #### How to install ubuntu 16.04 (can vary between computers):
 1. insert DoK with Ubuntu 16.04 installation on it
@@ -24,6 +16,13 @@ user name - buga
 password - hard one  
 5.5 when asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)  
 
+### Installation
+to install execute:
+```bash
+sudo apt-get install git
+git clone https://github.com/Bugatone/Ubuntu-Setup-Scripts.git
+cd Ubuntu-Setup-Scripts
+sudo ./install.sh
 
 #### Stuff to do after installing if needed:  
 1. **Read the instructions carefully**  
