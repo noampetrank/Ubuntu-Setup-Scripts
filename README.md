@@ -40,7 +40,7 @@ sudo ./install.sh
 4.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).
 5. Install Android Studio  
 5.1. Download version 2.3.3 of android studio from [the archives](https://developer.android.com/studio/archive.html)  
-5.2. Extract the downloaded zip to /opt/  
+5.2. Extract the downloaded zip to /opt/: from home/buga/Downloads: sudo unzip FILE.zip -d /opt/
 5.3. Launch android studio by executing `/opt/android-studio/bin/studio.sh`  
 5.4. Let the setup process finish with default values  
 5.4. After finishing, on the main window press Configure -> SDK Manager  
