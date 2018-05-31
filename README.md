@@ -61,3 +61,11 @@ sudo ./install.sh
 
 #### Stuff to do when new employee is coming:  
 - Open new account in Gmail, GitHub (+SSH key), TestRail (if needed), Trello, and buy softwares licenses.
+
+#### SSH Keys for GitHub:
+1. https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html
+2. Switching remote URLs from HTTPS to SSH:
+Go to all repositories and change from https to shh: 
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+2.1 Verify that the remote URL has changed:
+git remote -v
