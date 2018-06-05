@@ -11,6 +11,9 @@ pip install -e Bugatone-Space
 git clone https://github.com/Bugatone/mobileproduct.git
 pip install -e mobileproduct
 
+git clone https://github.com/Bugatone/test-files.git
+sudo ./install_lfs.sh
+
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
 echo "export LD_LIBRARY_PATH=.:/home/buga/Bugatone-Space/lib/linux_x86:\$LD_LIBRARY_PATH" >> ~/.profile
