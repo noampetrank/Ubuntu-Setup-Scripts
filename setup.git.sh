@@ -26,7 +26,7 @@ source ~/.profile
 
 echo "Updating root .bashrc"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> /root/.bashrc
-echo "export TEST_FILES_PATH=/home/buga/test-files" >> ~/root/.bashrc
+echo "export TEST_FILES_PATH=/home/buga/test-files" >> /root/.bashrc
 echo "export LD_LIBRARY_PATH=.:/home/buga/Bugatone-Space/lib/linux_x86:\$LD_LIBRARY_PATH" >> /root/.bashrc
 echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /root/.bashrc
 echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
