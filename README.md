@@ -72,3 +72,7 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 2.1 Verify that the remote URL has changed:
 
 git remote -v
+
+#### Shared Printer (Google Cloud Print):
+Printer's name: Printerush
+https://www.google.com/cloudprint?authuser=tzippy%40bugatone.com#printers
