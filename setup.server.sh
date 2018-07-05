@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 echo "Installing basic tools"
-sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk -y
+sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk gcc -y
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -16,11 +16,15 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-5.0 1000
 sudo update-alternatives --config clang --skip-auto
 sudo update-alternatives --config clang++ --skip-auto
 
-echo "Installing cmake"
-wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz
-tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
-sudo mv cmake-3.10.2-Linux-x86_64 /opt/cmake
-rm -f cmake-3.10.2-Linux-x86_64.tar.gz
+type cmake
+if [ $? -eq 1 ]
+then
+    echo "Installing cmake"
+    wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz
+    tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
+    sudo mv cmake-3.10.2-Linux-x86_64 /opt/cmake
+    rm -f cmake-3.10.2-Linux-x86_64.tar.gz
+fi
 
 echo "* Downloading ndk 16"
 wget --quiet --show-progress https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip
@@ -96,4 +100,4 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu
 echo "make Bugatone-Space"
 cd Bugatone-Space
 ./make.sh linux
-
+.
