@@ -1,29 +1,31 @@
 
 #### How to install ubuntu 16.04 (can vary between computers):
-1. insert DoK with Ubuntu 16.04 installation on it
+1. Insert DoK with Ubuntu 16.04 installation on it
 2. Turn on computer, and press F2/F12/search google (depends on computer)
-3. choose what looks like your installation DoK.
+3. Choose what looks like your installation DoK.
    if you get to choose between bios and UEFI, choose UEFI.
-4. press Enter
-5. installation window 'welcome':
-5.1. when asked for password - choose the hard one  
-5.2. when asked what to install, check both boxes.  
-5.3. connect to wifi  
-5.4. when asked details about computer:  
+4. Press Enter
+5. Installation window 'welcome':  
+5.1. When asked for password - choose the hard one  
+5.2. When asked what to install, check both boxes.  
+5.3. Connect to wifi  
+5.4. When asked details about computer:  
 your name - doesn't matter  
-computer name - bugaLab__ (number)  
+computer name - bugalab\_ (number)  
 user name - buga  
 password - hard one  
-5.5. when asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)  
+5.5. When asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)  
 
 ### Installation
-to install execute:
+To install execute:
+
 ```bash
 sudo apt-get install git
 git clone https://github.com/Bugatone/Ubuntu-Setup-Scripts.git
 cd Ubuntu-Setup-Scripts
 sudo ./install.sh
 ```
+
 #### Stuff to do after installing if needed:  
 1. **Read the instructions carefully**  
 2. Make sure there are no leftover files as root  
@@ -54,7 +56,7 @@ sudo ./install.sh
 6.10. Go to File -> Open -> BugatoneAudioServerService (`~/Bugatone-Space/projects/android_apps/BugatoneAudioServerService`), and under the tools menu, press the button to create a desktop shortcut for android studio  
 6.11. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)
 7. Make sure you can compile BugatoneAudioServerService in android studio - Click on the green hummer.
-8. Install ExpressVpn: Copy /mnt/buga_pub/expressvpn_blabla.deb to home/buga/Downloads.
+8. Install ExpressVpn: Copy /mnt/buga\_pub/expressvpn\_blabla.deb to home/buga/Downloads.
 8.1. From home/buga/Downloads run: sudo dpkg -i <file> 
 8.2 In terminal, type: expressvpn to make sure it was installed
 8.3. Register and activate the account with the user name and password in the 'credentials' file on Drive.
@@ -67,12 +69,14 @@ sudo ./install.sh
 2. Switching remote URLs from HTTPS to SSH:
 Go to all repositories and change from https to shh:
 
+```
 git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+```
 
 2.1 Verify that the remote URL has changed:
 
 git remote -v
 
 #### Shared Printer (Google Cloud Print):
-Printer's name: Printerush
-https://www.google.com/cloudprint?authuser=tzippy%40bugatone.com#printers
+Send files to: `8634uvi37olt@hpeprint.com`
+Alternatively, message the HP Printer Facebook bot.
