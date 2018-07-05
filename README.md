@@ -56,10 +56,16 @@ sudo ./install.sh
 6.10. Go to File -> Open -> BugatoneAudioServerService (`~/Bugatone-Space/projects/android_apps/BugatoneAudioServerService`), and under the tools menu, press the button to create a desktop shortcut for android studio  
 6.11. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)
 7. Make sure you can compile BugatoneAudioServerService in android studio - Click on the green hummer.
-8. Install ExpressVpn: Copy /mnt/buga\_pub/expressvpn\_blabla.deb to home/buga/Downloads.
-8.1. From home/buga/Downloads run: sudo dpkg -i <file> 
-8.2 In terminal, type: expressvpn to make sure it was installed
-8.3. Register and activate the account with the user name and password in the 'credentials' file on Drive.
+8. Open CLion and update the compiler settings to be as following:
+
+
+![CLion Screenshot](https://github.com/Bugatone/Ubuntu-Setup-Scripts/blob/master/Images/ClionClang.png?raw=true)
+
+
+9. Install ExpressVpn: Copy /mnt/buga\_pub/expressvpn\_blabla.deb to home/buga/Downloads.
+9.1. From home/buga/Downloads run: sudo dpkg -i <file> 
+9.2 In terminal, type: expressvpn to make sure it was installed
+9.3. Register and activate the account with the user name and password in the 'credentials' file on Drive.
 
 #### Stuff to do when new employee is coming:  
 - Open new account in Gmail, GitHub (+SSH key), TestRail (if needed), Trello, and buy softwares licenses.
