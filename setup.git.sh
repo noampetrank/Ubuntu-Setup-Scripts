@@ -17,6 +17,8 @@ sudo -H git-lfs-2.4.2/install.sh
 rm -r git-lfs-2.4.2
 rm git-lfs-linux-amd64-2.4.2.tar.gz
 git lfs install
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
 
 git clone https://github.com/Bugatone/test-files.git
 
