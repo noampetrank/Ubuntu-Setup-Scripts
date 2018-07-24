@@ -37,4 +37,4 @@ unzip -q android-ndk-r11c-linux-x86_64.zip
 echo "* Moving ndk 11 to /opt"
 sudo mv android-ndk-r11c /opt
 
-sudo apt-get install meld gitk htop -y
+sudo apt-get install meld gitk htop hardinfo swig -y
