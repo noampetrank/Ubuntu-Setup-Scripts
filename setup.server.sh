@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 echo "Installing basic tools"
-sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran -y
+sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran swig -y
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -61,7 +61,6 @@ sudo -H pip install cbor
 sudo -H pip install stopit
 sudo -H pip install pyserial
 sudo -H pip install pyusb
-sudo -H pip install swig
 sudo -H pip install pathlib2
 sudo -H pip install jinja2
 
