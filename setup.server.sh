@@ -61,7 +61,9 @@ sudo -H pip install cbor
 sudo -H pip install stopit
 sudo -H pip install pyserial
 sudo -H pip install pyusb
-sudo -H pip install pyalsaaudio
+sudo -H pip install swig
+sudo -H pip install pathlib2
+sudo -H pip install jinja2
 
 echo "setup git"
 git config --global push.default simple
