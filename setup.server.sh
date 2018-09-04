@@ -124,3 +124,15 @@ echo "make Bugatone-Space"
 cd Bugatone-Space
 ./make.sh linux
 
+echo "* Downloading openlibm"
+wget --quiet --show-progress https://github.com/JuliaLang/openlibm/archive/v0.4.1.zip
+echo "* Extracting openlibm"
+unzip -q v0.4.1.zip
+echo "* Building openlibm"
+cd openlibm-0.4.1
+make
+echo "* Installing openlibm"
+sudo make install
+cd ..
+rm -rf openlibm-0.4.1
+rm -f v0.4.1.zip
