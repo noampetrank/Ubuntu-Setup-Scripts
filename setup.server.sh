@@ -63,6 +63,8 @@ sudo -H pip install pyserial
 sudo -H pip install pyusb
 sudo -H pip install pathlib2
 sudo -H pip install jinja2
+sudo -H pip install nose-exclude
+
 
 echo "setup git"
 git config --global push.default simple
