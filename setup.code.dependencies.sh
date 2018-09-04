@@ -19,6 +19,7 @@ sudo update-alternatives --config clang++ --skip-auto
 echo "Installing cmake"
 wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz
 tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
+sudo rm -rf /opt/cmake
 sudo mv cmake-3.10.2-Linux-x86_64 /opt/cmake
 
 
