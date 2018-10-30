@@ -84,7 +84,7 @@ prepare_repo() {
 
     header "Resetting repo: $(pwd)"
     branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-    if [ $branch != "master" ]
+    if [ "$branch" != "master" ]
     then
         echo "$(pwd) is on branch: '$branch'"
         get_yes_no_answer "Do you want to switch to 'master'?"
