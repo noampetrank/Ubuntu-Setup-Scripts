@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Installing dependencies"
-sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk -y
+sudo apt-get install -y vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -52,3 +52,17 @@ sudo make install
 cd ..
 rm -rf openlibm-0.4.1
 rm -f v0.4.1.zip
+
+echo "* Downloading kcov"
+git clone git@github.com:SimonKagstrom/kcov.git
+echo "* Building kcov"
+cd kcov
+mkdir build
+cd build
+cmake ..
+make -j8
+echo "* Installing kcov"
+sudo make install
+cd ..
+cd ..
+rm -rf kcov
