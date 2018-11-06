@@ -53,16 +53,4 @@ cd ..
 rm -rf openlibm-0.4.1
 rm -f v0.4.1.zip
 
-echo "* Downloading kcov"
-git clone git@github.com:SimonKagstrom/kcov.git
-echo "* Building kcov"
-cd kcov
-mkdir build
-cd build
-cmake ..
-make -j8
-echo "* Installing kcov"
-sudo make install
-cd ..
-cd ..
-rm -rf kcov
+./install_kcov.sh
