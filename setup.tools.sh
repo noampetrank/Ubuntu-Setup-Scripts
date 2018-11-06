@@ -17,16 +17,16 @@ sudo dpkg -i google-chrome*.deb
 
 echo "Install emacs-mozc"
 sudo apt update
-sudo apt install emacs-mozc
+sudo apt install -y emacs-mozc
 
 echo "Install gnome-tweak-tool"
-sudo apt install gnome-tweak-tool
+sudo apt install -y gnome-tweak-tool
 
 echo "Install id3v2"
-sudo apt install id3v2
+sudo apt install -y id3v2
 
 echo "Install screen"
-sudo apt install screen
+sudo apt install -y screen
 
 echo "Install tree"
-sudo apt install tree
+sudo apt install -y tree
