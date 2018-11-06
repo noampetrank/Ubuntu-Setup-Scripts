@@ -39,9 +39,9 @@ sudo ./install.sh
 5. Using jetbrains toolbox install CLion and PyCharm  
 5.1. Download the toolbox from [here](https://www.jetbrains.com/toolbox/app/)  
 5.2. **Extract** the downloaded file and run the executable  
-5.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).
-5.4 Go to https://account.jetbrains.com/login and sign in with Email: adminstrator@bugatone.com, Password: #Bug4dm1n!.
-5.5 Go to Bugatone licences. click on the softaware and check the box next to the user. click on manage -> Request 1 activation code. paste that code in the activation code field in the software.
+5.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).  
+5.4 Go to https://account.jetbrains.com/login and sign in with adminstrator user.  
+5.5 Go to Bugatone licences. click on the softaware and check the box next to the user. click on manage -> Request 1 activation code. paste that code in the activation code field in the software.  
 6. Install Android Studio  
 6.1. Download version 2.3.3 of android studio from [the archives](https://developer.android.com/studio/archive.html)  
 6.2. Extract the downloaded zip to /opt/: from home/buga/Downloads: sudo unzip FILE.zip -d /opt/
