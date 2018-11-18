@@ -22,6 +22,8 @@ git config --global credential.helper 'cache --timeout=3600'
 
 git clone https://github.com/Bugatone/test-files.git
 
+git clone https://github.com/Bugatone/oppo_daemon.git
+
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
 echo "export TEST_FILES_PATH=/home/buga/test-files" >> ~/.profile
@@ -45,4 +47,7 @@ source /root/.bashrc
 echo "make project"
 cd Bugatone-Space
 ./make.sh linux
-
+cd
+cd mobileproduct
+./make.py linux
+cd
