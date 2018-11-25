@@ -9,7 +9,7 @@ ln -s Bugatone-Space git
 pip install -e Bugatone-Space
 
 git clone https://github.com/Bugatone/mobileproduct.git
-pip install -e mobileproduct
+pip install --process-dependency-links -e mobileproduct
 
 git clone https://github.com/Bugatone/buga-recordings.git
 sudo -H pip install -e buga-recordings
