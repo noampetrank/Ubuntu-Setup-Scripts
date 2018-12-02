@@ -123,3 +123,5 @@ cd ../oppo_daemon
 prepare_repo
 cd ../mobileproduct
 prepare_repo
+cd ../buga-recordings
+prepare_repo
