@@ -7,6 +7,11 @@ wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
 dpkg -i vscode.deb
 apt-get install -f
 
+echo "Installing Android Studio"
+wget https://dl.google.com/dl/android/studio/ide-zips/3.2.1.0/android-studio-ide-181.5056338-linux.zip
+unzip -q android-studio-ide-181.5056338-linux.zip
+mv android-studio /opt/
+
 echo "Install chrome"
 sudo apt-get install libxss1 libappindicator1 libindicator7
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
