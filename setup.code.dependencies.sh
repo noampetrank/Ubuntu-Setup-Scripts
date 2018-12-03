@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Installing dependencies"
-sudo apt-get install -y vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
+sudo apt-get install -y vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
