@@ -54,8 +54,9 @@ sudo ./install.sh
 6.8.2. Now you can install older build tools versions. Install 24.0.1, 25.0.2 and 25.0.3  
 6.9. Press OK, accept, and wait for the long download to finish  
 6.10. Go to File -> Open -> BugatoneAudioServerService (`~/Bugatone-Space/projects/android_apps/BugatoneAudioServerService`), and under the tools menu, press the button to create a desktop shortcut for android studio  
-6.11. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)
-7. Make sure you can compile BugatoneAudioServerService in android studio - Click on the green hummer.
+6.11. Go to File -> Project Structure and set the Android NDK location to where we downloaded it (`/opt/android-ndk-r11c`)  
+7.1. Make sure you can compile BugatoneAudioServerService in android studio - Click on the green hammer.  
+7.2. Make sure you can export a version `./make.py android -x some_directory`  
 8. Open CLion and update the compiler settings to be as following:
 
 
