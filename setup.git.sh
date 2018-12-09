@@ -46,7 +46,6 @@ sudo echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /roo
 sudo echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
 sudo echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
 sudo echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
-sudo source /root/.bashrc
 
 echo "make project"
 cd Bugatone-Space
