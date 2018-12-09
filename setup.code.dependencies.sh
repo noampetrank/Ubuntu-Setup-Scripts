@@ -21,7 +21,8 @@ wget --quiet --show-progress https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x8
 tar -xzf cmake-3.10.2-Linux-x86_64.tar.gz
 sudo rm -rf /opt/cmake
 sudo mv cmake-3.10.2-Linux-x86_64 /opt/cmake
-
+echo "export PATH=/opt/cmake/bin:\$PATH" >> ~/.profile
+source ~/.profile
 
 echo "* Downloading ndk 16"
 wget --quiet --show-progress https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip
