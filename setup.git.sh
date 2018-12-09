@@ -3,15 +3,15 @@ echo "setup git"
 git config --global push.default simple
 echo "checkout code"
 cd
-git clone https://github.com/Bugatone/Bugatone-Space.git
+git clone git@github.com:Bugatone/Bugatone-Space.git
 sudo chown -R buga:buga Bugatone-Space
 ln -s Bugatone-Space git
 pip install -e Bugatone-Space
 
-git clone https://github.com/Bugatone/mobileproduct.git
+git clone git@github.com:Bugatone/mobileproduct.git
 pip install --process-dependency-links -e mobileproduct
 
-git clone https://github.com/Bugatone/buga-recordings.git
+git clone git@github.com:Bugatone/buga-recordings.git
 sudo -H pip install -e buga-recordings
 sudo -H pip install -e buga-recordings/bugatone_space
 
@@ -24,9 +24,9 @@ git lfs install
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
-git clone https://github.com/Bugatone/test-files.git
+git clone git@github.com:Bugatone/test-files.git
 
-git clone https://github.com/Bugatone/oppo_daemon.git
+git clone git@github.com:Bugatone/oppo_daemon.git
 
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
@@ -39,14 +39,14 @@ echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> ~/.profile
 source ~/.profile
 
 echo "Updating root .bashrc"
-echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> /root/.bashrc
-echo "export TEST_FILES_PATH=/home/buga/test-files" >> /root/.bashrc
-echo "export LD_LIBRARY_PATH=.:/home/buga/Bugatone-Space/lib/linux_x86:\$LD_LIBRARY_PATH" >> /root/.bashrc
-echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /root/.bashrc
-echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
-echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
-echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
-source /root/.bashrc
+sudo echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> /root/.bashrc
+sudo echo "export TEST_FILES_PATH=/home/buga/test-files" >> /root/.bashrc
+sudo echo "export LD_LIBRARY_PATH=.:/home/buga/Bugatone-Space/lib/linux_x86:\$LD_LIBRARY_PATH" >> /root/.bashrc
+sudo echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /root/.bashrc
+sudo echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
+sudo echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
+sudo echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
+sudo source /root/.bashrc
 
 echo "make project"
 cd Bugatone-Space
