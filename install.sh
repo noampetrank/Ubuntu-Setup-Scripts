@@ -15,5 +15,6 @@ sudo apt-get upgrade -y
 ./setup.storage.sh
 ./setup.shortcuts.and.songs.sh
 ./setup.network.workaround.sh
+./setup.grpc.sh
 
 sudo chown -R buga:buga /home/buga 

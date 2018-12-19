@@ -28,6 +28,12 @@ git clone git@github.com:Bugatone/test-files.git
 
 git clone git@github.com:Bugatone/oppo_daemon.git
 
+git clone git@github.com:Bugatone/device_communication.git
+cd ~/device_communication
+git submodule update --init --recursive
+cd -
+pip install --process-dependency-links -e device_communication
+
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
 echo "export TEST_FILES_PATH=/home/buga/test-files" >> ~/.profile
