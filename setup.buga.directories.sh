@@ -5,5 +5,5 @@ mkdir ~/experiments/parameters
 mkdir ~/tmp_dir
 mkdir ~/buga_logs
 cp bugaconfig.ini /home/buga/
-cp bugaconfig.ini /root/
+sudo cp bugaconfig.ini /root/
 sudo chown -R buga:buga ~/experiments ~/tmp_dir ~/buga_logs /root/bugaconfig.ini /home/buga/bugaconfig.ini

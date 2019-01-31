@@ -13,7 +13,7 @@ unzip -q android-studio-ide-181.5056338-linux.zip
 sudo mv android-studio /opt/
 
 echo "Install chrome"
-sudo apt-get install libxss1 libappindicator1 libindicator7
+sudo apt-get install -y libxss1 libappindicator1 libindicator7
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # This is doubled on purpose.
 sudo dpkg -i google-chrome*.deb
