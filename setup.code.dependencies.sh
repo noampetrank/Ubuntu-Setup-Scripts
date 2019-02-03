@@ -55,3 +55,6 @@ rm -rf openlibm-0.4.1
 rm -f v0.4.1.zip
 
 ./install_kcov.sh
+
+# Make dates appear in English in terminal
+echo "export LC_TIME=en_US.UTF-8" >> ~/.profile
