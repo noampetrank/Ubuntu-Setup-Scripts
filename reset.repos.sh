@@ -23,6 +23,15 @@ get_yes_no_answer() {
     done
 }
 
+kill_current_idlespork_shells() {
+    sudo pkill -f "/usr/bin/python -c __import__\('idlesporklib\.run'\)\.run\.main\(True\)"
+    if [ $? -ne 0 ]
+    then
+        error "ERROR: Killing current idlespork shells failed!"
+        echo "NOTE: If no Idlespork windows are open, the above error is expected"
+    fi
+}
+
 checkout_master() {
     echo "Checking out 'master' branch in $(pwd)..."
     git checkout master
@@ -127,3 +136,9 @@ cd ../buga-recordings
 prepare_repo
 cd ../device_communication
 prepare_repo
+
+get_yes_no_answer "Do you want to reset idlesporks?"
+if [ $? -eq 1 ]
+then
+    kill_current_idlespork_shells
+fi
