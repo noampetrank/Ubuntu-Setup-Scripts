@@ -125,3 +125,5 @@ cd ../mobileproduct
 prepare_repo
 cd ../buga-recordings
 prepare_repo
+cd ../device_communication
+prepare_repo
