@@ -74,6 +74,28 @@ pull_latest_code() {
             return 0
         fi
     fi
+
+    echo "Pulling tags on $(pwd)..."
+    git pull --tags
+    if [ $? -eq 0 ]
+    then
+        echo "Pulled tags successfully"
+        return 1
+    else
+        echo "Pull tags failed."
+        return 0
+    fi
+
+    echo "Updating submodules on $(pwd)..."
+    git submodule update --init --recursive
+    if [ $? -eq 0 ]
+    then
+        echo "Updated submodules successfully"
+        return 1
+    else
+        echo "Updating submodules failed."
+        return 0
+    fi
 }
 
 prepare_repo() {
