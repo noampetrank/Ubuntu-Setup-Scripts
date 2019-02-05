@@ -24,7 +24,9 @@ git lfs install
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
-git clone https://github.com/Bugatone/test-files.git
+#git clone https://github.com/Bugatone/test-files.git
+cp /mnt/buga_storage/test-files.tar.gz .
+tar -xzf test-files.tar.gz
 
 git clone https://github.com/Bugatone/oppo_daemon.git
 
