@@ -3,17 +3,17 @@ echo "setup git"
 git config --global push.default simple
 echo "checkout code"
 cd
-git clone git@github.com:Bugatone/Bugatone-Space.git
+git clone https://github.com/Bugatone/Bugatone-Space.git
 sudo chown -R buga:buga Bugatone-Space
 ln -s Bugatone-Space git
-pip install -e Bugatone-Space
+pip install --user -e Bugatone-Space
 
-git clone git@github.com:Bugatone/mobileproduct.git
-pip install --process-dependency-links -e mobileproduct
+git clone https://github.com/Bugatone/mobileproduct.git
+pip install -user --process-dependency-links -e mobileproduct
 
-git clone git@github.com:Bugatone/buga-recordings.git
-sudo -H pip install -e buga-recordings
-sudo -H pip install -e buga-recordings/bugatone_space
+git clone https://github.com/Bugatone/buga-recordings.git
+pip install --user -e buga-recordings
+pip install --user -e buga-recordings/bugatone_space
 
 wget -q --show-progress https://github.com/git-lfs/git-lfs/releases/download/v2.4.2/git-lfs-linux-amd64-2.4.2.tar.gz
 tar -xzf git-lfs-linux-amd64-2.4.2.tar.gz
@@ -24,11 +24,11 @@ git lfs install
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
-git clone git@github.com:Bugatone/test-files.git
+git clone https://github.com/Bugatone/test-files.git
 
-git clone git@github.com:Bugatone/oppo_daemon.git
+git clone https://github.com/Bugatone/oppo_daemon.git
 
-git clone git@github.com:Bugatone/device_communication.git
+git clone https://github.com/Bugatone/device_communication.git
 cd ~/device_communication
 git submodule update --init --recursive
 cd -
