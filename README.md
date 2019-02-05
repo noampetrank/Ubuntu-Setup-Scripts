@@ -41,10 +41,11 @@ sudo ./install.sh
 5.2. **Extract** the downloaded file and run the executable  
 5.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).  
 5.4 Go to https://account.jetbrains.com/login and sign in with adminstrator user.  
-5.5 Go to Bugatone licences. click on the softaware and check the box next to the user. click on manage -> Request 1 activation code. paste that code in the activation code field in the software.  
+5.5 Go to Bugatone licences. click on the software and check the box next to the user. click on manage -> Request 1 activation code. paste that code in the activation code field in the software.  
 6. Setup Android Studio  
 6.1. Open android studio by executing `/opt/android-studio/bin/studio.sh`  
-6.2. Let the setup process finish with default values  
+6.2.1. Let the setup process finish with default values  
+6.2.2. Configure (bottom right) -> Create Desktop Entry  
 6.3. Build BugaRpcSoLoader  
 6.3.1. Go to File -> Open -> `~/device_communication/android/BugaRpcSoLoader`  
 6.3.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
