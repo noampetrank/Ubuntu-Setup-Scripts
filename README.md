@@ -45,26 +45,16 @@ sudo ./install.sh
 6. Setup Android Studio  
 6.1. Open android studio by executing `/opt/android-studio/bin/studio.sh`  
 6.2. Let the setup process finish with default values  
-6.3. After finishing, on the main window press Configure -> SDK Manager  
-6.4. In the first tab (SDK Platforms)  
-6.4.1. Press the checkbox at the bottom that says "Show Package Details"  
-6.4.2. Select Android SDK Platform 28, 26, 25, 23  
-6.4.3. Select Sources for Android 25  
-6.5. In the second tab (SDK Tools)  
-6.5.1. Select CMake, LLDB, Android Emulator, Android SDK Platform-Tools, Android SDK Tools, NDK, Support Repository with all its sub-nodes  
-6.5.2. Press the checkbox at the bottom that says "Show Package Details"  
-6.5.3. Select Android SDK Build-Tools 24.0.1, 25.0.3, 26.0.2, 27.0.3, 28.0.3  
-6.6. Press OK, accept, and wait for the long download to finish  
-6.7. Build BugaRpcSoLoader  
-6.7.1. Go to File -> Open -> `~/device_communication/android/BugaRpcSoLoader`  
-6.7.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
-6.7.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
-6.7.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
-6.8. Build smart_ep_demo  
-6.8.1. Go to File -> Open -> `~/mobileproduct/android_apps/smart_ep_demo`  
-6.8.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
-6.8.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
-6.8.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
+6.3. Build BugaRpcSoLoader  
+6.3.1. Go to File -> Open -> `~/device_communication/android/BugaRpcSoLoader`  
+6.3.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
+6.3.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
+6.3.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
+6.4. Build smart_ep_demo  
+6.4.1. Go to File -> Open -> `~/mobileproduct/android_apps/smart_ep_demo`  
+6.4.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
+6.4.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
+6.4.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
 7. Make sure you can export a version `./make.py android -x some_directory` from `~/mobileproduct/` directory.  
 8. Open CLion and update the compiler settings to be as following:  
 
