@@ -48,12 +48,12 @@ sudo ./install.sh
 6.2.2. Configure (bottom right) -> Create Desktop Entry  
 6.3. Build BugaRpcSoLoader  
 6.3.1. Go to File -> Open -> `~/device_communication/android/BugaRpcSoLoader`  
-6.3.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
+6.3.2. Wait for sync to finish. If Android Studio requests to install something, do it. If something fails without giving an action, do Sync Project like in 6.3.3   
 6.3.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
 6.3.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
 6.4. Build smart_ep_demo  
 6.4.1. Go to File -> Open -> `~/mobileproduct/android_apps/smart_ep_demo`  
-6.4.2. Wait for sync to finish. If Android Studio requests to install something, do it.  
+6.4.2. Wait for sync to finish. If Android Studio requests to install something, do it. If something fails without giving an action, do Sync Project like in 6.4.3     
 6.4.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
 6.4.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
 7. Make sure you can export a version `./make.py android -x some_directory` from `~/mobileproduct/` directory.  
