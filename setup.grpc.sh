@@ -1,6 +1,5 @@
 echo "setup gRPC stuff..."
-sudo apt-get install golang-go
-sudo apt install -y autoconf automake libtool curl make g++ unzip
+sudo apt install -y golang-go autoconf automake libtool curl make g++ unzip
 
 cd ~/device_communication
 git submodule update --init --recursive
