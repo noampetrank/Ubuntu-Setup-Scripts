@@ -33,9 +33,9 @@ sudo ./install.sh
 2.2. Run `ll | grep root`  
 2.3. There should be no files with root ownership, if there are run `sudo chown -R buga:buga <filename> <filename> <filename>`  
 3. **Important**: Log out and log in to the computer to apply new settings!  
-4. Make sure you can compile the code via `./make.py`  
+4. Make sure you can compile the code via `./make.sh`  
 4.1. cd into git directory (`~/Bugatone-Space`)  
-4.2. run `./make.py linux`, there is no need for sudo  
+4.2. run `./make.sh linux`, there is no need for sudo  
 5. Using jetbrains toolbox install CLion and PyCharm  
 5.1. Download the toolbox from [here](https://www.jetbrains.com/toolbox/app/)  
 5.2. **Extract** the downloaded file and run the executable  
