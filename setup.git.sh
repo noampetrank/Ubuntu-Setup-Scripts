@@ -9,7 +9,7 @@ ln -s Bugatone-Space git
 pip install --user -e Bugatone-Space
 
 git clone https://github.com/Bugatone/mobileproduct.git
-pip install --user --process-dependency-links -e mobileproduct
+pip install --user -e mobileproduct
 
 git clone https://github.com/Bugatone/buga-recordings.git
 pip install --user -e buga-recordings
@@ -34,7 +34,7 @@ git clone https://github.com/Bugatone/device_communication.git
 cd ~/device_communication
 git submodule update --init --recursive
 cd -
-pip install --process-dependency-links -e device_communication
+pip install --user -e device_communication
 
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
