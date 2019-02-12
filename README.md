@@ -56,7 +56,11 @@ sudo ./install.sh
 6.4.2. Wait for sync to finish. If Android Studio requests to install something, do it. If something fails without giving an action, do Sync Project like in 6.4.3     
 6.4.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
 6.4.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
-7. Make sure you can export a version `./make.py android -x some_directory` from `~/mobileproduct/` directory.  
+7. Make sure you can export a version.   
+7.1. `cd ~/mobileproduct`  
+7.2. `mkdir some_directory`  
+7.3. `./make.py -x some_directory --name "some name"`  
+7.4. You don't have to wait for the end of the benchmark, that takes hours.  
 8. Open CLion and update the compiler settings to be as following:  
 
 
