@@ -62,15 +62,16 @@ sudo ./install.sh
 7.3. `./make.py -x some_directory --name "some name"`  
 7.4. You don't have to wait for the end of the benchmark, that takes hours.  
 8. Open CLion and update the compiler settings to be as following:  
-
-
-![CLion Screenshot](https://github.com/Bugatone/Ubuntu-Setup-Scripts/blob/master/Images/ClionClang.png?raw=true)
-
-
-9. Install ExpressVpn: cp /mnt/buga\_pub/expressvpn\_blabla.deb /home/buga/Downloads.  
-9.1. From home/buga/Downloads run: sudo dpkg -i <file>  
-9.2 In terminal, type: expressvpn to make sure it was installed  
-9.3. Register and activate the account with the user name and password in the 'credentials' file on Drive.  
+  
+  
+![CLion Screenshot](https://github.com/Bugatone/Ubuntu-Setup-Scripts/blob/master/Images/ClionClang.png?raw=true)  
+  
+  
+9. Install ExpressVpn:  
+9.1. `cp /mnt/buga_pub/expressvpn_blabla.deb /home/buga/Downloads`  
+9.2. `cd /home/buga/Downloads && sudo dpkg -i expressvpn_blabla.deb`  
+9.3. In terminal, type `expressvpn` to make sure it was installed  
+9.4. Register and activate the account with the user name and password in the 'credentials' file on Drive.  
 
 #### Stuff to do when new employee is coming:
 - Open new account in Gmail, GitHub (+SSH key), TestRail (if needed), Trello, and buy softwares licenses.  
@@ -81,7 +82,7 @@ sudo ./install.sh
 Go to all repositories and change from https to shh:  
 
 ```
-git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+git remote set-url origin git@github.com:Bugatone/REPOSITORY.git
 ```
 
 2.1 Verify that the remote URL has changed:  
