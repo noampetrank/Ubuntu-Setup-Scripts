@@ -67,7 +67,7 @@ sudo ./install.sh
 ![CLion Screenshot](https://github.com/Bugatone/Ubuntu-Setup-Scripts/blob/master/Images/ClionClang.png?raw=true)
 
 
-9. Install ExpressVpn: Copy /mnt/buga\_pub/expressvpn\_blabla.deb to home/buga/Downloads.  
+9. Install ExpressVpn: cp /mnt/buga\_pub/expressvpn\_blabla.deb /home/buga/Downloads.  
 9.1. From home/buga/Downloads run: sudo dpkg -i <file>  
 9.2 In terminal, type: expressvpn to make sure it was installed  
 9.3. Register and activate the account with the user name and password in the 'credentials' file on Drive.  
