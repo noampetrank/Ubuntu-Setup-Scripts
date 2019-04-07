@@ -9,10 +9,10 @@ sudo apt-get upgrade -y
 ./setup.python.libs.sh
 ./setup.tools.sh
 # ./setup.net.sh
+./setup.storage.sh
 ./setup.git.sh
 ./setup.buga.directories.sh
 ./setup.openssh.sh
-./setup.storage.sh
 ./setup.shortcuts.and.songs.sh
 ./setup.network.workaround.sh
 ./setup.grpc.sh

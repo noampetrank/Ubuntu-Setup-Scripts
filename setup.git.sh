@@ -25,8 +25,13 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
 #git clone https://github.com/Bugatone/test-files.git
+echo Copying test-files
 cp /mnt/buga_storage/test-files.tar.gz .
 tar -xzf test-files.tar.gz
+echo Pulling test-files
+cd test-files
+git pull
+cd ..
 
 git clone https://github.com/Bugatone/oppo_daemon.git
 

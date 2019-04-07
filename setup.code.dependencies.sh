@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
 echo "Installing dependencies"
-sudo apt-get install -y vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk bbe fping
+# Ubuntu 18.04 does not have libatlas-dev, should only install libatlas-base-dev instead. I put the correct command in setup.ubuntu.18.sh
+sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk bbe fping python-tk -y
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+# TODO: Add -y flag
 sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-5.0 main"
 sudo add-apt-repository ppa:janisozaur/cmake-update
 sudo apt-get update
+# TODO: CMake does not work on ubuntu 18.04
+# Do this instead: https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line
 sudo apt-get install -y clang-5.0 cmake=3.12.1-1~16.04.1ubuntu1
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-5.0 1000
