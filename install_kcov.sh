@@ -4,7 +4,7 @@ echo "* Building kcov"
 cd kcov
 mkdir build
 cd build
-/opt/cmake/bin/cmake ..
+cmake ..
 make -j8
 echo "* Installing kcov"
 sudo make install
