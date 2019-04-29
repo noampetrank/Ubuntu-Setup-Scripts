@@ -7,14 +7,14 @@
 4. Press Enter  
 5. Installation window 'welcome':  
 5.1. When asked for password - choose the hard one  
-5.2. When asked what to install, check both boxes.  
+5.2. When asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)   
 5.3. Connect to wifi  
 5.4. When asked details about computer:  
 your name - doesn't matter  
 computer name - bugalab\_ (number)  
 user name - buga  
 password - hard one  
-5.5. When asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)  
+  
 
 ### Installation
 To install execute:  
