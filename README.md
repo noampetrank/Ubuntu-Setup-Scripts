@@ -10,10 +10,10 @@
 5.2. When asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)   
 5.3. Connect to wifi  
 5.4. When asked details about computer:  
-your name - doesn't matter  
-computer name - bugalab\_ (number)  
-user name - buga  
-password - hard one  
+__your name__ - doesn't matter  
+__computer name__ - bugalab\_ (number)  
+__user name__ - buga  
+__password__ - hard one  
   
 
 ### Installation
