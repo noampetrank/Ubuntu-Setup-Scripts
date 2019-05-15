@@ -30,3 +30,7 @@ cd ../..
 
 
 # TODO: Clang does not install all the way, not sure why. Running the commands manually worked.
+
+# TODO: Compile swig from source:
+# * need to apt install libpcre3-dev
+# * Download tar for swig 3.0.8 and compile
