@@ -149,7 +149,7 @@ prepare_repo() {
 cd $(echo $BUGATONE_ROOT)
 prepare_repo
 cd ../test-files
-prepare_repo
+aws s3 sync s3://buga-resources-test-files .
 cd ../oppo_daemon
 prepare_repo
 cd ../mobileproduct
