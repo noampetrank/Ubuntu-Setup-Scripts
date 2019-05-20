@@ -6,3 +6,6 @@ cd
 mkdir test-files-new
 cd test-files-new
 aws s3 sync s3://buga-resources-test-files .
+cd
+mv test-files test-files-old
+mv test-files-new test-files
