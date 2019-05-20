@@ -24,15 +24,6 @@ git lfs install
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
-#git clone https://github.com/Bugatone/test-files.git
-echo Copying test-files
-cp /mnt/buga_storage/test-files.tar.gz .
-tar -xzf test-files.tar.gz
-echo Pulling test-files
-cd test-files
-git pull
-cd ..
-
 git clone https://github.com/Bugatone/oppo_daemon.git
 
 git clone https://github.com/Bugatone/device_communication.git
@@ -49,6 +40,8 @@ echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> ~/.profil
 echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> ~/.profile
 echo "export PATH=/opt/cmake/bin:\$PATH" >> ~/.profile
 echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> ~/.profile
+echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
+echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
 source ~/.profile
 
 echo "Updating root .bashrc"
@@ -59,6 +52,18 @@ sudo echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /roo
 sudo echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
 sudo echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
 sudo echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
+sudo echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
+sudo echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
+
+echo Copying test-files
+cp /mnt/buga_storage/test-files.tar.gz .
+tar -xzf test-files.tar.gz
+echo Syncing test-files
+cd test-files
+sudo apt install -y awscli
+source ~/.profile
+aws s3 sync s3://buga-resources-test-files .
+cd ..
 
 echo "make project"
 cd Bugatone-Space

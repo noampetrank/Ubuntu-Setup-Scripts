@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 echo "Installing basic tools"
-sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran swig -y
+sudo apt-get install vim gitk unzip python-setuptools build-essential python-dev libfftw3-dev libasound2-dev zlib1g-dev python-tk libatlas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran swig awscli -y
 
 echo "Installing clang"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -42,6 +42,8 @@ if [ $? -eq 1 ]
 then
     echo "Adding cmake to PATH..."
     echo "export PATH=/opt/cmake/bin:\$PATH" >> ~/.profile
+    echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
+    echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
     source ~/.profile
 fi
 
@@ -87,18 +89,10 @@ then
     sudo -H pip install -e mobileproduct
 fi
 
-git lfs &> /dev/null
-if [ $? -eq 1 ]
+if [ ! -d test-files ]
 then
-    echo "installing git-lfs"
-    wget -q --show-progress https://github.com/git-lfs/git-lfs/releases/download/v2.4.2/git-lfs-linux-amd64-2.4.2.tar.gz
-    tar -xzf git-lfs-linux-amd64-2.4.2.tar.gz
-    sudo -H git-lfs-2.4.2/install.sh
-    rm -r git-lfs-2.4.2
-    rm git-lfs-linux-amd64-2.4.2.tar.gz
-    git lfs install
-    echo "checkout test-files"
-    git clone https://github.com/Bugatone/test-files.git
+    echo "sync test-files"
+    aws s3 sync s3://buga-resources-test-files .
 fi
 
 grep "export BUGATONE_ROOT" ~/.profile  &> /dev/null
