@@ -30,8 +30,8 @@ sudo ./install.sh
 1. **Read the instructions carefully**  
 2. Make sure there are no leftover files as root  
 2.1. cd into the home directory (`/home/buga`)  
-2.2. Run `ll | grep root`  
-2.3. There should be no files with root ownership, if there are run `sudo chown -R buga:buga <filename> <filename> <filename>`  
+2.2. Run `ll -R | grep root`  
+2.3. There should be no files with root ownership, if there are run `sudo chown -R buga:buga .`  
 3. **Important**: Log out and log in to the computer to apply new settings!  
 4. Make sure you can compile the code via `./make.sh`  
 4.1. cd into git directory (`~/Bugatone-Space`)  
