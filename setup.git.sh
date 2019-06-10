@@ -15,12 +15,6 @@ git clone https://github.com/Bugatone/buga-recordings.git
 pip install --user -e buga-recordings
 pip install --user -e buga-recordings/bugatone_space
 
-wget -q --show-progress https://github.com/git-lfs/git-lfs/releases/download/v2.4.2/git-lfs-linux-amd64-2.4.2.tar.gz
-tar -xzf git-lfs-linux-amd64-2.4.2.tar.gz
-sudo -H git-lfs-2.4.2/install.sh
-rm -r git-lfs-2.4.2
-rm git-lfs-linux-amd64-2.4.2.tar.gz
-git lfs install
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
