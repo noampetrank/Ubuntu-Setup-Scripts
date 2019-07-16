@@ -35,3 +35,6 @@ sudo apt install -y screen
 
 echo "Install tree"
 sudo apt install -y tree
+
+echo "Install graphviz"
+sudo apt install -y graphviz

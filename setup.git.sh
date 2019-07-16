@@ -9,6 +9,9 @@ ln -s Bugatone-Space git
 pip install --user -e Bugatone-Space
 
 git clone https://github.com/Bugatone/mobileproduct.git
+cd mobileproduct
+git submodule update --init --recursive
+cd -
 pip install --user -e mobileproduct
 
 git clone https://github.com/Bugatone/buga-recordings.git
@@ -26,6 +29,8 @@ git submodule update --init --recursive
 cd -
 pip install --user -e device_communication
 
+git clone git@github.com:drorspei/sismic-viz.git
+
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
 echo "export TEST_FILES_PATH=/home/buga/test-files" >> ~/.profile
@@ -36,6 +41,9 @@ echo "export PATH=/opt/cmake/bin:\$PATH" >> ~/.profile
 echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> ~/.profile
 echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
 echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
+echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
+echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
+echo "export ANDROID_HOME=/home/buga/Android/Sdk/" >> ~/.profile
 source ~/.profile
 
 echo "Updating root .bashrc"
@@ -46,8 +54,7 @@ sudo echo "export PATH=.:/home/buga/Bugatone-Space/bin/linux_x86:\$PATH" >> /roo
 sudo echo "export PYTHONPATH=/home/buga/Bugatone-Space/python" >> /root/.bashrc
 sudo echo "export PATH=/opt/cmake/bin:\$PATH" >> /root/.bashrc
 sudo echo "export PATH=/home/buga/Android/Sdk/platform-tools:\$PATH" >> /root/.bashrc
-sudo echo "export AWS_ACCESS_KEY_ID=AKIASMHZ4KIOX7Z7MXE5" >> ~/.profile
-sudo echo "export AWS_SECRET_ACCESS_KEY=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" >> ~/.profile
+sudo echo "export ANDROID_HOME=/home/buga/Android/Sdk/" >> /root/.bashrc
 
 echo Copying test-files
 cp /mnt/buga_storage/test-files.tar.gz .
