@@ -5,8 +5,7 @@ echo "Installing dependencies"
 sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk bbe fping build-essential python-tk libcanberra-gtk-module libcanberra-gtk3-module -y
 
 echo Installing gcc 5
-sudo apt install g++-5
-sudo apt install gcc-5
+sudo apt install g++-5 gcc-5 -y
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20
@@ -16,16 +15,8 @@ sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
 sudo update-alternatives --set cc /usr/bin/gcc
 sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
 sudo update-alternatives --set c++ /usr/bin/g++
-`
 
 echo "Installing clang"
-#wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-# TODO: Add -y flag
-#sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-5.0 main"
-#sudo add-apt-repository ppa:janisozaur/cmake-update
-#sudo apt-get update
-# TODO: CMake does not work on ubuntu 18.04
-# Do this instead: https://askubuntu.com/questions/355565/how-do-i-install-the-latest-version-of-cmake-from-the-command-line
 sudo apt-get install -y clang-5.0
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-5.0 1000

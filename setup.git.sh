@@ -29,7 +29,7 @@ git submodule update --init --recursive
 cd -
 pip install --user -e device_communication
 
-git clone git@github.com:drorspei/sismic-viz.git
+git clone https://github.com/drorspei/sismic-viz.git
 
 echo "Updating buga .profile file"
 echo "export BUGATONE_ROOT=/home/buga/Bugatone-Space" >> ~/.profile
