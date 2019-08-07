@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 echo "setup git"
 git config --global push.default simple
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+
 echo "checkout code"
 cd
 git clone https://github.com/Bugatone/Bugatone-Space.git
@@ -17,9 +20,6 @@ pip install --user -e mobileproduct
 git clone https://github.com/Bugatone/buga-recordings.git
 pip install --user -e buga-recordings
 pip install --user -e buga-recordings/bugatone_space
-
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=3600'
 
 git clone https://github.com/Bugatone/oppo_daemon.git
 
