@@ -1,17 +1,17 @@
 
-#### How to install ubuntu 16.04 (can vary between computers):
-1. Insert DoK with Ubuntu 16.04 installation on it  
-2. Turn on computer, and press F2/F12/search google (depends on computer)  
+#### How to install ubuntu 18.04
+1. Insert DoK with Ubuntu 18.04 installation on it  
+2. Turn on computer, and press F2/F12/F8/delete
 3. Choose what looks like your installation DoK.  
    if you get to choose between bios and UEFI, choose UEFI.  
 4. Press Enter  
 5. Installation window 'welcome':  
-5.1. When asked for password - choose the hard one  
+5.1. When asked for password - choose the hard one for laptops and regular for desktops  
 5.2. When asked about type of installation - check boxes for 'erase all and install' + 'encrypt disk'(!)   
 5.3. Connect to wifi  
 5.4. When asked details about computer:  
-__your name__ - doesn't matter  
-__computer name__ - bugalab\_ (number)  
+__your name__ - Name of the  persong using the computer  
+__computer name__ - buga<Username> (eg. BugaZiv, BugaEinat)
 __user name__ - buga  
 __password__ - hard one  
   
@@ -26,52 +26,42 @@ cd Ubuntu-Setup-Scripts
 sudo ./install.sh
 ```
 
-#### Stuff to do after installing if needed:  
+#### Stuff you can do during the installation
+1. Download [jetbrains toolbox](https://www.jetbrains.com/toolbox/app/)  
+2. Download PyCharm, CLion and Android Studio  
+3. When mobileproduct has completed cloning (meaning there is a folder in `~/mobileproduct`) you can do the following:  
+3.0. Run `sudo chown -R buga:buga /home/buga`  
+3.1. Launch android studio, approve all the installations  
+3.2. Open the project at `mobileproduct/android_apps/BugatoneAuthDemo`  
+3.3. Press all buttons until the project agrees to load  
+3.3.1 This should include install adnroid sdk 28 and approving the license  
+
+#### Stuff to do after installing:  
 1. **Read the instructions carefully**  
-2. Make sure there are no leftover files as root  
-2.1. cd into the home directory (`/home/buga`)  
-2.2. Run `ll -R | grep root`  
-2.3. There should be no files with root ownership, if there are run `sudo chown -R buga:buga .`  
-3. **Important**: Log out and log in to the computer to apply new settings!  
-4. Make sure you can compile the code via `./make.sh`  
-4.1. cd into git directory (`~/Bugatone-Space`)  
-4.2. run `./make.sh linux`, there is no need for sudo  
-5. Using jetbrains toolbox install CLion and PyCharm  
-5.1. Download the toolbox from [here](https://www.jetbrains.com/toolbox/app/)  
-5.2. **Extract** the downloaded file and run the executable  
-5.3. Download PyCharm Professional and CLion, open and activate them (if needed, buy licenses from: https://account.jetbrains.com/login. user name and password are in the 'credentials' file on Drive).  
-5.4 Go to https://account.jetbrains.com/login and sign in with adminstrator user.  
-5.5 Go to Bugatone licences. click on the software and check the box next to the user. click on manage -> Request 1 activation code. paste that code in the activation code field in the software.  
-6. Setup Android Studio  
-6.1. Open android studio by executing `/opt/android-studio/bin/studio.sh`  
-6.2.1. Let the setup process finish with default values  
-6.2.2. Configure (bottom right) -> Create Desktop Entry  
-6.3. Build BugaRpcSoLoader  
-6.3.1. Go to File -> Open -> `~/device_communication/android/BugaRpcSoLoader`  
-6.3.2. Wait for sync to finish. If Android Studio requests to install something, do it. If something fails without giving an action, do Sync Project like in 6.3.3   
-6.3.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
-6.3.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
-6.4. Build smart_ep_demo  
-6.4.1. Go to File -> Open -> `~/mobileproduct/android_apps/smart_ep_demo`  
-6.4.2. Wait for sync to finish. If Android Studio requests to install something, do it. If something fails without giving an action, do Sync Project like in 6.4.3     
-6.4.3. Go to File -> Sync Project with Gradle Files. Make sure the process finishes without errors.  
-6.4.4. Make sure you can compile the project in Android Studio - click on the green hammer.  
-7. Make sure you can export a version.   
-7.1. `cd ~/mobileproduct`  
-7.2. `mkdir some_directory`  
-7.3. `./make.py -x some_directory --name "some name"`  
-7.4. You don't have to wait for the end of the benchmark, that takes hours.  
-8. Open CLion and update the compiler settings to be as following:  
+2. **Important**: Restart the computer once. Do not skip this step
+3. Make sure you can compile the code:
+```
+$ cd ~/Bugatone-Space
+$ ./make.sh linux
+$ cd ~/mobileproduct
+$ ./make.py
+```
+4. Make sure you can export a version.   
+4.1. `cd ~/mobileproduct`  
+4.2. `mkdir some_directory`  
+4.3. `./make.py -x some_directory --name "some name"`  
+4.4. You don't have to wait for the end of the benchmark, that takes hours.  
+5. Open CLion and update the compiler settings to be as following:  
   
   
 ![CLion Screenshot](https://github.com/Bugatone/Ubuntu-Setup-Scripts/blob/master/Images/ClionClang.png?raw=true)  
   
-  
-9. Install ExpressVpn:  
-9.1. `cp /mnt/buga_pub/expressvpn_blabla.deb /home/buga/Downloads`  
-9.2. `cd /home/buga/Downloads && sudo dpkg -i expressvpn_blabla.deb`  
-9.3. In terminal, type `expressvpn` to make sure it was installed  
-9.4. Register and activate the account with the user name and password in the 'credentials' file on Drive.  
+For laptops only:   
+6. Install ExpressVpn:  
+6.1. `cp /mnt/buga_pub/expressvpn_blabla.deb /home/buga/Downloads`  
+6.2. `cd /home/buga/Downloads && sudo dpkg -i expressvpn_blabla.deb`  
+6.3. In terminal, type `expressvpn` to make sure it was installed  
+6.4. Register and activate the account with the user name and password in the 'credentials' file on Drive.  
 
 #### Stuff to do when new employee is coming:
 - Open new account in Gmail, GitHub (+SSH key), TestRail (if needed), Trello, and buy softwares licenses.  
