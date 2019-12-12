@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo apt install byacc bison flex python3-dev
 mkdir -p /home/buga/.soft
 cd /home/buga/.soft
