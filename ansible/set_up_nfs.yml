@@ -1,0 +1,61 @@
+---
+- hosts: '{{ target }}'
+  become: true
+  tasks:
+  - name: Install nfs package
+    apt: pkg=nfs-common state=present
+  - name: Unmount buga_old
+    mount:
+      state: absent
+      path: /mnt/buga_old
+  - name: Delete buga_old
+    lineinfile:
+      dest: /etc/fstab
+      state: absent
+      regexp: ".*buga_old.*"
+  - name: Get running processes
+    shell: "lsof 2> /dev/null | grep buga_storage | cat"
+    register: running_processes
+    failed_when: running_processes.stdout
+  - name: Create buganfs directory
+    file:
+      path: /mnt/buganfs
+      state: directory
+  - name: unmount /mnt/buganfs
+    mount:
+      src: '10.0.0.115:/Buga'
+      path: '/mnt/buganfs'
+      fstype: nfs4
+      opts: 'rw,hard,intr,rsize=8192,wsize=8192,timeo=14'
+      state: mounted
+  - name: umount buga_storage as cifs
+    mount:
+      src: '//10.0.0.115/Buga'
+      path: '/mnt/buga_storage'
+      state: absent
+      fstype: cifs
+  - name: umount buga_storage as cifs
+    mount:
+      src: '//10.0.0.115/Buga'
+      path: '/mnt/buga_storage'
+      state: unmounted
+      fstype: cifs
+  - name: Remove buga_storage line from fstab
+    lineinfile:
+      dest: /etc/fstab
+      state: absent
+      regexp: ".*buga_storage.*"
+  - name: check the current symlink
+    stat: path=/mnt/buga_storage
+    register: buga_storage_exists
+  - name: Delete old buga_storage directory
+    file:
+      path: /mnt/buga_storage
+      state: absent
+    when: buga_storage_exists.stat.isdir is defined and buga_storage_exists.stat.isdir
+  - name: Create symlink to buganfs
+    file:
+      src: /mnt/buganfs
+      dest: /mnt/buga_storage
+      state: link
+      
