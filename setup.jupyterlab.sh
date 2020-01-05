@@ -32,3 +32,4 @@ $HOME/.pyenv/versions/jlab/bin/jupyter nbextension enable --py widgetsnbextensio
 
 # Set alias
 echo 'alias jlab="$HOME/.pyenv/versions/jlab/bin/jupyter lab"' >> $HOME/.bashrc
+echo "You need to restart the shell in order for the jlab shortcut to work"
