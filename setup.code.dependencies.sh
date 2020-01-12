@@ -2,7 +2,7 @@
 
 echo "Installing dependencies"
 # Ubuntu 18.04 does not have libatlas-dev, should only install libatlas-base-dev instead. I put the correct command in setup.ubuntu.18.sh
-sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk bbe fping build-essential python-tk libcanberra-gtk-module libcanberra-gtk3-module libportaudio2 usbutils docker -y
+sudo apt-get install vim libfftw3-dev libatlas3-base libatlas-base-dev libblas-dev liblapack-dev gfortran python-gtk2 default-jdk binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev default-jdk bbe fping build-essential python-tk libcanberra-gtk-module libcanberra-gtk3-module libportaudio2 usbutils aws-cli -y
 
 echo Installing gcc 5
 sudo apt install g++-5 gcc-5 -y

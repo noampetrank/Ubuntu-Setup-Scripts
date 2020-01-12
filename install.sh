@@ -16,5 +16,6 @@ sudo apt-get upgrade -y
 ./setup.shortcuts.and.songs.sh
 ./setup.network.workaround.sh
 ./setup.grpc.sh
+./install_docker.sh
 
 sudo chown -R buga:buga /home/buga 
